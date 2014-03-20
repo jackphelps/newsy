@@ -1,0 +1,175 @@
+/*! OVERRIDES TO GENERATED BOOTSTRAP HERE */
+
+.body-lowered {
+  margin-top:250px;
+}
+.body-raised {
+  margin-top:60px;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar {
+  text-transform: uppercase;
+  font-weight:700;
+}
+.navbar, .read-more, .sidebar, .pagination {
+  font-family: "proxima Nova", "Helvetica Neue", helvetica, arial, sans-serif;
+}
+.navbar {
+  background-image: url('/img/vintage_ad_bar.jpg');
+  background-position:center; 
+  box-shadow: 0 8px 6px -6px rgba(68,68,68,0.7);
+}
+
+.big-nav {
+  height:250px;
+  box-shadow: none;
+}
+
+.small-nav {
+  height:40px;
+}
+
+.big-nav .navbar-brand {
+  font-size:4em;
+  line-height:250px;
+}
+
+a:hover {
+  color:#fd0;
+}
+p {
+  text-align: justify;
+}
+
+/*! CUSTOM COMPONENTS HERE */
+
+.header-full {
+}
+
+.header-condensed {
+}
+
+.sidebar-section {
+  background-color:#eee;
+  margin-bottom:16px;
+  padding:12px 0px;
+  border-left:8px solid #ddd;
+}
+.sidebar-section h1,
+.sidebar-section h2,
+.sidebar-section h3,
+.sidebar-section h4,
+.sidebar-section p {
+  margin:0;
+  margin: 12px 14px;
+}
+.sidebar-list-item {
+  color:#000;
+  display:block;
+  border-top:1px #ddd solid;
+  margin:0 0 0 -8px;
+  padding: 12px 14px;
+  border-left:8px solid #ddd;
+}
+.sidebar-list-item:hover {
+  background-color:#000;
+  color:#fd0;
+  margin-left:-8px;
+  border-left:8px solid #fd0;
+}
+
+/*! for the post we'll screw with bootstrap's header margins, reducing them from the top at the title to */
+/*! align well with other theme elements and adding extra margin to the bottom */
+.post {
+  margin-bottom:60px;
+}
+.post-title {
+  color: #000;
+  padding:3px 10px;
+  margin: 0 0 16px 0;
+  border-left:8px solid #fd0;
+}
+.post-title a {
+  color:#000;
+}
+.post-title a:hover {
+  color:#fd0;
+  text-decoration: none;
+}
+.post-meta {
+  font-size:0.3em;
+  color:#999;
+  padding:8px 0;
+  font-style: italic;
+}
+.post-summary-img {
+  float:right;
+}
+.post-summary-img img {
+  width:340px;
+  padding-left:15px;
+  border-left:1px solid #eee;
+  margin-left: 15px;
+
+}
+.read-more {
+  font-size:0.7em;
+  color:#fd0;
+  background-color:#000;
+  padding:4px;
+  border-left:4px solid #fd0;
+}
+.read-more:hover {
+  background-color:#fd0;
+  color:#000;
+  text-decoration: none;
+}
+
+.pipe-space {
+  padding-left:6px;
+  padding-right:6px;
+}
+.full-post {
+  border-left:1px solid #eee;
+  border-right:1px solid #eee;
+  padding-left:6%;
+  padding-right:6%;
+  margin-bottom: 40px;
+}
+.full-post img {
+  width:100%;
+}
+.pagination .page-number, .pagination a {
+  font-size:0.7em;
+  color:#fd0;
+  background-color:#000;
+  padding:4px;
+}
+.pagination a:hover {
+  background-color:#fd0;
+  color:#000;
+  text-decoration: none;
+}
+
+.site-footer {
+  color:#999;
+  min-height:200px;
+  background-color: #000;
+  border-top:20px solid #333;
+  text-align: center;
+  padding:60px;
+}
+
+body, .navbar, .spacer-div, a, img, li,.navbar-header, .navbar-brand {
+  transition: all 0.2s;
+  -moz-transition: all 0.2s; /* Firefox 4 */
+  -webkit-transition: all 0.2s; /* Safari and Chrome */
+  -o-transition: all 0.2s; /* Opera */
+}
+ {
+  transition:all 0.3s;
+  -moz-transition: all 0.3s; /* Firefox 4 */
+  -webkit-transition: all 0.3s; /* Safari and Chrome */
+  -o-transition: all 0.3s; /* Opera */
+}
+

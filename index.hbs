@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{> expanding-header}}
+<div class="spacer-div body-lowered">&nbsp;
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-4">
+      {{> sidebar}}
+    </div>
+
+    <div class="col-md-8">
+
+      <section class="content" role="main">
+        {{#foreach posts}}
+
+          <div class="post {{post_class}}" role="article">
+
+            <h3 class="post-title">
+              <a href="{{{url}}}">{{title}}</a>
+
+
+            <div class="post-meta">
+              <span>{{date format='dddd'}}, {{date format='DD MMM'}}</span>
+              {{#if author}}
+                <span class="pipe-space">|</span>
+                by {{author.name}}
+              {{/if}}
+              {{#if tags}}
+                  <span class="pipe-space">|</span>
+                  tags: {{tags seperator=" "}}
+              {{/if}}
+            </div>
+            </h3>
+
+              <div class="post-summary-img">
+                {{content words="0"}}
+              </div>
+              <div class="post-content" itemprop="articleBody">
+                <p>{{excerpt words="80"}}...</p>
+                <a class="read-more" href="{{{url}}}">Read more &rarr;</a>
+              </div>
+
+          </div>
+        {{/foreach}}
+
+        {{#if pagination}}
+          <div class="pagination">
+            {{{pagination}}}
+          </div>
+        {{/if}}
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+{{> footer}}

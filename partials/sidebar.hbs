@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <div class="sidebar-section">
+    <h4>{{@blog.description}}</h4>
+  </div>
+  <div class="sidebar-section">
+    <h4>About</h4>
+    <p>here is some content lorem ipsum dolor sit amet consectetuer</p>
+  </div>
+  <div class="sidebar-section">
+    <h4>Suggested Posts:</h4>
+    <div class="sidebar-list">
+      {{#foreach posts}}
+        <a class="sidebar-list-item" href="{{{url}}}">{{{title}}}</a>
+      {{/foreach}}
+    </div>
+  </div>
+</div>
+
