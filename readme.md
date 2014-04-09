@@ -21,7 +21,7 @@ A note from the author:
 
 !Important!
 ==============
-The following items should be customized when you're setting this up on your own. Use this as a checklist, else you might miss some important things.
+The following items are what needs to be customized when you're setting this up on your own. Use this as a checklist, else you might miss some important things.
 * Colors & CSS: for development, the theme is set to use uncompiled less variables, so tweak this stuff in css/vars.less.
 * set up all of ghost's predefined inputs (title, subtitle, users, etc.) and drop some real content in for content-first designing
 * "featured images" for each post are scraped out of the post body using ghost's provided content=0 handlebars excerpting and laid into the page 
@@ -34,9 +34,8 @@ The following items should be customized when you're setting this up on your own
 * compile less [directions to follow]
 * add a favicon
 * plug in your own API keys for the following:
+  * twitter (@username)
   * google analytics
-  * facebook
-  * twitter
   * disqus
   * tapir (search)
 

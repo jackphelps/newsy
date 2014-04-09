@@ -2,6 +2,18 @@
 
 {{> header}}
 {{#post}}
+<!-- post-specific social info for SEO -->
+<head>
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:description" content="{{excerpt words="20"}}" /> 
+  <meta property="og:image" content="{{@blog.url}}/img/vintage_ad_bar.jpg" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@adamjohnsonnyc">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{excerpt characters="130"}}...">
+  <meta name="twitter:image" content="{{@blog.url}}/img/vintage_ad_bar.jpg">
+</head>
 
 
 <div class="post-top">
@@ -16,16 +28,6 @@
 <div class="container">
 
   <section class="content" role="main">
-
-      <!-- post-specific social info for SEO -->
-      <head>
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="{{title}}" />
-        <meta property="og:description" content="{{excerpt words="30"}}" /> 
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="{{title}}">
-        <meta name="twitter:description" content="{{excerpt characters="199"}}">
-      </head>
 
       <div class="full-post {{post_class}}" role="article">
 
