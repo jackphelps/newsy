@@ -1,0 +1,49 @@
+{{!< default}}
+
+{{> expanding-header}}
+{{#post}}
+<!-- post-specific social info for SEO -->
+<head>
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{{title}}" />
+  <meta property="og:description" content="{{excerpt words="20"}}" /> 
+  <meta property="og:image" content="{{@blog.url}}/img/vintage_ad_bar.jpg" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@adamjohnsonnyc">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{excerpt characters="130"}}...">
+  <meta name="twitter:image" content="{{@blog.url}}/img/vintage_ad_bar.jpg">
+</head>
+
+<div class="container">
+
+  <section class="content" role="main">
+
+      <div class="full-post {{post_class}}" role="article">
+
+        <h1 class="post-title full-page">
+          {{title}}
+        </h1>
+
+        <div class="post-content" itemprop="articleBody">
+          {{content}}
+        </div>
+      </div>
+
+  </section>
+</div>
+
+<div class="container">
+  <div class="row bottom-meta bottom-social-center">
+    <a href="http://twitter.com/share?text={{title}}&url={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/twitter.png"></a>
+    <a href="http://www.reddit.com/submit?url={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/reddit.png"></a>
+    <a href="http://www.facebook.com/sharer.php?u={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/fb.png"></a>
+    <a href="{{@blog.url}}/rss" target="_blank"><img src="/img/social/rss.png"></a>
+  </div>
+
+</div>
+
+{{/post}}
+{{> footer}}
+
+</div>
