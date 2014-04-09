@@ -9,14 +9,14 @@ A news-focused Ghost theme
  * SUPER easy to work with
  * built with bootstrap, jquery, and less
 
- As seen on http://citationsneeded.com
+As seen on http://citationsneeded.com
 
-A note from the author:
+Why make this?
 ==============
 
- I have been incredibly frustrated with most of the themes I've purchased for CMS like Wordpress and Ghost. They look good out of the box, but are usually unbelievably fragile and hard to tweak.
+I have been incredibly frustrated with most of the themes I've seen or purchased for CMS like Wordpress and Ghost. They look good out of the box, but are usually unbelievably fragile, cluttered, overly complicated, and hard to tweak. In keeping with Ghost's goals, I thought it needed something simple, universal, and easy to work with.
 
- Newsy has a simple and clear set of configurations: it's all based on bootstrap + less with a clearly documented set of overrides to bootstrap's defaults, so you won't need to wade through tons of confusing CSS to customize something, and you'll never break any of the underlying elegance by tweaking some stuff here and there. It ships with less.js included so you can tweak the variables easily, and compile when you're ready for production.
+Newsy has a simple and clear set of configurations: it's all based on bootstrap + less with a clearly documented set of overrides to bootstrap's defaults, so you won't need to wade through tons of confusing CSS to customize something, and you'll never break any of the underlying elegance by tweaking some stuff here and there. It ships with less.js included so you can tweak the variables easily, and compile when you're ready for production.
 
 
 !Important!

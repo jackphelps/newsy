@@ -64,6 +64,8 @@ $(function postSummaryTweaks() {
       } else if (words < 8) {
         $(this).children('.post-summary-subtitle').css('font-size','1.6');
       }
+    } else {
+      $(this).children('div').removeClass('post-summary-subtitle');
     }
   });
 });
@@ -73,6 +75,7 @@ $(function fullpostTweaks() {
   $('.post-top').show();
   if ($('.post-image p img')) {
     var img = $('.post-image p img');
+    console.log(img.inspect)
     console.log(img);
     var subtitle = img.attr('alt');
     var tmp = subtitle.split(' ');
@@ -84,6 +87,7 @@ $(function fullpostTweaks() {
     $('.post-subtitle h3').html(subtitle);
     $('.post-content p:first').hide();
   }
+
 });
 
 
