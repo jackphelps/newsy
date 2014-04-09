@@ -1,42 +1,76 @@
 {{!< default}}
+
 {{> header}}
-<div class="spacer-div body-raised">&nbsp;
+{{#post}}
+
+
+<div class="post-top">
+  <!-- script inserts featured image and subtitle here, do not change unless you know what you're doing -->
+  <div class="post-image">
+    {{content words="0"}}
+    <div class="post-subtitle"><h3></h3>
+    </div>
+  </div>
 </div>
 
-<div class="container full-post">
+<div class="container">
 
-      <section class="content" role="main">
+  <section class="content" role="main">
 
-        {{#post}}
+      <!-- post-specific social info for SEO -->
+      <head>
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="{{title}}" />
+        <meta property="og:description" content="{{excerpt words="30"}}" /> 
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{title}}">
+        <meta name="twitter:description" content="{{excerpt characters="199"}}">
+      </head>
 
-          <div class="post {{post_class}}" role="article">
+      <div class="full-post {{post_class}}" role="article">
 
-            <h1 class="post-title">
-              <a href="{{{url}}}">{{title}}</a>
+        <h1 class="post-title hideable">
+          <a href="{{{url}}}">{{title}}</a>
 
-            <div class="post-meta">
-              <span>{{date format='dddd'}}, {{date format='DD MMM'}}</span>
-              {{#if author}}
+          <div class="post-meta">
+            <span class="glyphicon glyphicon-calendar"></span>&nbsp;{{date format='dddd'}}, {{date format='DD MMM'}}
+            {{#if author}}
+              <span class="pipe-space">|</span>
+              <span class="glyphicon glyphicon-user"></span>&nbsp; {{author.name}}
+            {{/if}}
+            {{#if tags}}
                 <span class="pipe-space">|</span>
-                by {{author.name}}
-              {{/if}}
-              {{#if tags}}
-                  <span class="pipe-space">|</span>
-                  tags: {{tags seperator=" "}}
-              {{/if}}
-            </div>
-            </h1>
-
-            <div class="post-content" itemprop="articleBody">
-              {{content}}
-            </div>
+                <span class="glyphicon glyphicon-tags"></span>&nbsp; {{tags seperator=" "}}
+            {{/if}}
           </div>
+        </h1>
 
-        {{/post}}
+        <div class="post-content" itemprop="articleBody">
+          {{content}}
+        </div>
+      </div>
 
-      </section>
+  </section>
+</div>
+
+<div class="container">
+  <div class="row bottom-meta bottom-profile">
+    <div class="col-xs-6 author">
+      <img src="{{author.image}}">
+      {{author.bio}}
+    </div>
+    <div class="col-xs-6 bottom-social">
+      <a href="http://twitter.com/share?text={{title}}&url={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/twitter.png"></a>
+      <a href="http://www.reddit.com/submit?url={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/reddit.png"></a>
+      <a href="http://www.facebook.com/sharer.php?u={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/fb.png"></a>
+      <a href="{{@blog.url}}/rss" target="_blank"><img src="/img/social/rss.png"></a>
+    </div>
+  </div>
 
 </div>
+
+    
+
 <div class="container">
   <div id="comments">
     <div class="comment-head"><h3>COMMENTS &darr;</h3></div>
@@ -57,7 +91,7 @@
 
   </div>
 </div>
-
-  {{> footer}}
+{{/post}}
+{{> footer}}
 
 </div>

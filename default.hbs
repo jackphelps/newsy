@@ -10,11 +10,21 @@
         <meta name="description" content="{{meta_description}}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Twitter Card data -->
+        <meta name="twitter:site" content="@publisher_handle">
+        <meta name="twitter:creator" content="@author_handle">
+
+        <!-- Open Graph data -->
+        <meta property="og:site_name" content="{{@blog.title}}" />
+        <meta property="fb:admins" content="Facebook numeric ID" />
+
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- CSS -->
-        <link rel="stylesheet" href="/css/bootstrap.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet/less" href="/css/bootstrap.less">
+        <link rel="stylesheet/less" href="/css/main.less">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 
         {{ghost_head}}
     </head>
@@ -35,7 +45,7 @@
         <!-- JavaScript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <script src="/js/main.js"></script>
+        <script src="/js/main_js.js"></script>
 
     </body>
 </html>
