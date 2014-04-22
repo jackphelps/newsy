@@ -1,9 +1,13 @@
-/*! OVERRIDES TO GENERATED BOOTSTRAP HERE */
-
+/* ============================================================================================== */
+/* ============================================================================================== */
+/* OVERRIDES TO GENERATED BOOTSTRAP HERE */
+/* ============================================================================================== */
+/* ============================================================================================== */
 @brand-primary: #fd0;
 @brand-background: #000;
 @brand-shadow: #ac8500;
 @brand-glow: lighten(@brand-primary, 20%);
+@sans-serif: "proxima Nova", "Helvetica Neue", helvetica, arial, sans-serif;
 
 .body-lowered {
   margin-top:250px;
@@ -16,8 +20,9 @@ h1, h2, h3, h4, h5, h6, .navbar {
   text-transform: uppercase;
   font-weight:700;
 }
+/* all font family adjustments*/
 .navbar, .read-more, .sidebar, .pagination, .footer, .author, .post-summary-subtitle {
-  font-family: "proxima Nova", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: @sans-serif;
 }
 .navbar {
   background-image: url('/img/vintage_ad_bar.jpg');
@@ -41,16 +46,6 @@ h1, h2, h3, h4, h5, h6, .navbar {
 .big-nav .navbar-brand {
   font-size:4em;
   line-height:250px;
-  text-shadow: 1px 1px 0px @brand-shadow,
-               2px 2px 0px @brand-shadow,
-               3px 3px 0px @brand-shadow,
-               4px 4px 0px @brand-shadow,
-               5px 5px 0px @brand-shadow,
-               6px 6px 0px @brand-shadow,
-               7px 7px 0px @brand-shadow,
-               8px 8px 0px @brand-shadow,
-               9px 9px 0px @brand-shadow,
-              10px 10px 0px @brand-shadow;
   height:auto;
 }
 
@@ -92,7 +87,25 @@ p {
 }
 
 
-/*! CUSTOM COMPONENTS HERE */
+/* ============================================================================================== */
+/* ============================================================================================== */
+/* CUSTOM COMPONENTS HERE */
+/* ============================================================================================== */
+/* ============================================================================================== */
+
+/* 3d text */
+.three-d {
+  text-shadow: 1px 1px 0px @brand-shadow,
+               2px 2px 0px @brand-shadow,
+               3px 3px 0px @brand-shadow,
+               4px 4px 0px @brand-shadow,
+               5px 5px 0px @brand-shadow,
+               6px 6px 0px @brand-shadow,
+               7px 7px 0px @brand-shadow,
+               8px 8px 0px @brand-shadow,
+               9px 9px 0px @brand-shadow,
+              10px 10px 0px @brand-shadow;
+}
 
 .header-full {
 }
@@ -142,29 +155,36 @@ p {
   margin: 0px 3px;
 }
 
-/*! for the post we'll screw with bootstrap's header margins, reducing them from the top at the title to */
-/*! align well with other theme elements and adding extra margin to the bottom */
+/* for the post we'll screw with bootstrap's header margins, reducing them from the top at the title to */
+/* align well with other theme elements and adding extra margin to the bottom */
 .post {
   clear:both;
   margin-bottom:60px;
 }
+.static-img {
+  width:100%;
+  position:fixed;
+  top:0;
+  z-index:-999;
+}
+.static-img img {
+  width:100%;
+}
+.corner-nav {
+  position:fixed;
+  top:12px;
+  left:12px;
+  height:45px;
+  z-index:999;
+}
+.corner-nav img {
+  height:100%;
+}
 .post-top {
   display:none;
   position:relative;
-  background-color:#000;
   border-top:none;
   color:#fd0;
-  margin-bottom:40px;
-}
-
-.post-top h1,
-.post-top h2,
-.post-top h3,
-.post-top h4,
-.post-top h5 {
-  padding: 12px 1%;
-  margin:0;
-  text-align:center;
 }
 @media (max-width: 800px) {
   .post-top h1,
@@ -175,18 +195,45 @@ p {
     font-size:100%;
   }
 }
+.post-top h1,
+.post-top h2,
+.post-top h3,
+.post-top h4,
+.post-top h5,
+.post-top p {
+  padding:0;
+  margin:0;
+}
+.post-top p {
+  margin:0;
+}
 .post-top img {
   width:100%;
+  visibility:hidden;
 }
 .post-subtitle {
+  padding: 12px 1%;
+  margin:0;
+  text-align:center;
+  background-color:#000;
+}
+@media (min-width: 9100px) {
+  .post-subtitle {
+    position:absolute;
+    padding:30px 15%;
+    width:100%;
+    bottom:0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%);
+  }
 }
 @media (min-width: 1100px) {
   .post-subtitle {
-    position:absolute;
-    width:100%;
-    bottom:0px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.3) 100%);
+    padding:30px 17% 30px 17%;
   }
+}
+.post-white-bg {
+  background-color:#fff;
+  padding-top:40px;
 }
 .post-title {
   color: #000;
@@ -337,6 +384,13 @@ p {
 .social-icon-footer:hover {
   background-color:@brand-primary;
 }
+
+/* ============================================================================================== */
+/* ============================================================================================== */
+/* ANIMATION TIMING FOR DIFFERENT ELEMENTS HERE */
+/* ============================================================================================== */
+/* ============================================================================================== */
+
 .navbar, .spacer-div, img, li, .navbar-form, .search-text {
   transition: all 0.2s;
   -moz-transition: all 0.2s; /* Firefox 4 */

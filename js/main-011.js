@@ -75,8 +75,6 @@ $(function fullpostTweaks() {
   $('.post-top').show();
   if ($('.post-image p img')) {
     var img = $('.post-image p img');
-    console.log(img.inspect)
-    console.log(img);
     var subtitle = img.attr('alt');
     var tmp = subtitle.split(' ');
     //this is the hackiest thing I've ever done -- let's make sure there aren't 1 or 2 orphaned words at the end of the subtitle
@@ -86,6 +84,23 @@ $(function fullpostTweaks() {
     subtitle = tmp.join(' ');
     $('.post-subtitle h3').html(subtitle);
     $('.post-content p:first').hide();
+    $(window).on("resize", function () {
+      //make the subtitle section occupy the entire part of the window not occupied by the image
+      if ($(window).width() > 1100) {
+        var offheight = $(window).height() - $('.post-top').height();
+          $('.post-subtitle').css('padding-top','+='+offheight / 2);
+          $('.post-subtitle').css('padding-bottom','+='+offheight / 2);
+      }
+      // smooth parallax of top image
+      $(document).on("scroll",function() {
+        // shows whitespace when scrolling up to top if you don't force it not to go negative
+        if ($(document).scrollTop() >= 0) {
+          $('.static-img').css('top', -1 * ($(document).scrollTop() / 3));
+        } else {
+          $('.static-img').css('top', 0);
+        }
+      });
+    }).resize();
   }
 
 });
