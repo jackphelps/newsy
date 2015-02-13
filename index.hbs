@@ -2,7 +2,7 @@
 <head>
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{meta_title}}" />
-  <meta property="og:description" content="{{@blog.description}}" /> 
+  <meta property="og:description" content="{{@blog.description}}" />
   <meta property="og:image" content="{{@blog.url}}/img/vintage_ad_bar.jpg" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@adamjohnsonnyc">
@@ -13,60 +13,65 @@
 
 {{> expanding-header}}
 
-<div class="container">
+<div id="page-type" style="display:none;">index</div>
+<div class="post-white-bg">
 
-  <div class="row">
+  <div class="container">
 
-    <div class="col-md-4">
-      {{> sidebar}}
-    </div>
+    <div class="row">
 
-    <div class="col-md-8">
+      <div class="col-md-4">
+        {{> sidebar}}
+      </div>
 
-      <section class="content" role="main">
-        <div class="search-results"></div> 
-        {{#foreach posts}}
-          
-          <!-- "post-listing" class indicates partial (not full) post view for scripting rather than CSS, do not change! -->
-          <div class="post-listing {{post_class}}" role="article"> 
+      <div class="col-md-8">
 
+        <section class="content" role="main">
+          <div class="search-results"></div>
+          {{#foreach posts}}
 
-            <h3 class="post-title">
-              <a href="{{{url}}}">{{title}}</a>
+            <!-- "post-listing" class indicates partial (not full) post view for scripting rather than CSS, do not change! -->
+            <div class="post-listing {{post_class}}" role="article">
 
 
-              <div class="post-meta">
-                <span><span class="glyphicon glyphicon-calendar"></span>&nbsp; {{date format='dddd'}}, {{date format='DD MMM'}}</span>
-                {{#if author}}
-                  <span class="pipe-space">|</span>
-                  <span class="glyphicon glyphicon-user"></span>&nbsp; {{author.name}}
-                {{/if}}
-                {{#if tags}}
+              <h3 class="post-title">
+                <a href="{{{url}}}">{{title}}</a>
+
+
+                <div class="post-meta">
+                  <span><span class="glyphicon glyphicon-calendar"></span>&nbsp; {{date format='dddd'}}, {{date format='DD MMM'}}</span>
+                  {{#if author}}
                     <span class="pipe-space">|</span>
-                    <span class="glyphicon glyphicon-tags"></span>&nbsp; {{tags seperator=" "}}
-                {{/if}}
-              </div>
-            </h3>
+                    <span class="glyphicon glyphicon-user"></span>&nbsp; {{author.name}}
+                  {{/if}}
+                  {{#if tags}}
+                      <span class="pipe-space">|</span>
+                      <span class="glyphicon glyphicon-tags"></span>&nbsp; {{tags seperator=" "}}
+                  {{/if}}
+                </div>
+              </h3>
+              <a href="{{{url}}}">
+                <div class="post-summary-img">
+                  {{content words="0"}}
+                  <div class="post-summary-subtitle">
+                  </div>
+                </div>
+                <div class="read-more">
+                  <a href="{{{url}}}">Read more &rarr;</a>
+                </div>
+              </a>
 
-            <div class="post-summary-img">
-              {{content words="0"}}
-              <div class="post-summary-subtitle">
-                {{excerpt sentences="20"}}...
-              </div>
             </div>
-            <div class="read-more">
-              <a href="{{{url}}}">Read more &rarr;</a>
+          {{/foreach}}
+
+          {{#if pagination}}
+            <div class="pagination">
+              {{{pagination}}}
             </div>
+          {{/if}}
+        </section>
 
-          </div>
-        {{/foreach}}
-
-        {{#if pagination}}
-          <div class="pagination">
-            {{{pagination}}}
-          </div>
-        {{/if}}
-      </section>
+      </div>
 
     </div>
 

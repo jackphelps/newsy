@@ -5,7 +5,7 @@
 <head>
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{{title}}" />
-  <meta property="og:description" content="{{excerpt words="20"}}" /> 
+  <meta property="og:description" content="{{excerpt words="20"}}" />
   <meta property="og:image" content="{{@blog.url}}/img/vintage_ad_bar.jpg" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@adamjohnsonnyc">
@@ -13,6 +13,8 @@
   <meta name="twitter:description" content="{{excerpt characters="130"}}...">
   <meta name="twitter:image" content="{{@blog.url}}/img/vintage_ad_bar.jpg">
 </head>
+
+<div id="page-type" style="display:none;">post</div>
 
 <div class="static-img">
   {{content words="0"}}
@@ -22,40 +24,28 @@
   <a href="/"><img src="/img/icon.png"></a>
 </div>
 
-  <div class="post-top">
-    <!-- script inserts featured image and subtitle here, do not change unless you know what you're doing -->
-    <div class="post-image">
-      {{content words="0"}}
-      <div class="post-subtitle">
-        <h3></h3>
-      </div>
-    </div>
+<div class="post-top">
+  <div class="hero-post-title">
+    <h1>{{title}}</h1><br>
+    <h4></h4><br>
+    <h6>{{author}}</h6>
   </div>
+</div>
 
 
 <div class="post-white-bg">
+  <div class="top-social">
+    <a href="http://twitter.com/share?text={{title}}&url={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/twitter.png"></a>
+    <a href="http://www.reddit.com/submit?url={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/reddit.png"></a>
+    <a href="http://www.facebook.com/sharer.php?u={{@blog.url}}{{url}}" target="_blank"><img src="/img/social/fb.png"></a>
+    <a href="{{@blog.url}}/rss" target="_blank"><img src="/img/social/rss.png"></a>
+  </div>
 
   <div class="container">
 
     <section class="content" role="main">
 
         <div class="full-post {{post_class}}" role="article">
-
-          <h1 class="post-title hideable full-page">
-            <a href="{{{url}}}">{{title}}</a>
-
-            <div class="post-meta">
-              <span class="glyphicon glyphicon-calendar"></span>&nbsp;{{date format='dddd'}}, {{date format='DD MMM'}}
-              {{#if author}}
-                <span class="pipe-space">|</span>
-                <span class="glyphicon glyphicon-user"></span>&nbsp; {{author.name}}
-              {{/if}}
-              {{#if tags}}
-                  <span class="pipe-space">|</span>
-                  <span class="glyphicon glyphicon-tags"></span>&nbsp; {{tags seperator=" "}}
-              {{/if}}
-            </div>
-          </h1>
 
           <div class="post-content" itemprop="articleBody">
             {{content}}
@@ -81,13 +71,11 @@
 
   </div>
 
-      
-
   <div class="container">
     <div id="comments">
       <div class="comment-head"><h3>COMMENTS &darr;</h3></div>
       <div id="disqus_thread"></div>
-      <script type="text/javascript"> 
+      <script type="text/javascript">
           /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
           var disqus_shortname = 'corplulz'; // required: replace example with your forum shortname
 
