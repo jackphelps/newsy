@@ -81,7 +81,7 @@ $(function fullpostTweaks() {
     tmp[tmp.length-2] = tmp[tmp.length-2] + '&nbsp;' + tmp[tmp.length-1];
     tmp.pop(tmp[tmp.length-1]);
     subtitle = tmp.join(' ');
-    $('.hero-post-title h4').html(subtitle);
+    $('.hero-subtitle h4').html(subtitle);
     $('.post-content p:first').hide();
     $(window).on("resize", function () {
       // smooth parallax of top image

@@ -241,11 +241,28 @@ p {
   color: @brand-primary;
 }
 
-.hero-post-title {
+.post-hero {
   width:100%;
   padding: 12px 1%;
   text-align:center;
   background-color:#000;
+}
+
+.hero-title {
+  margin-bottom: 4%;
+}
+.hero-subtitle {
+}
+.hero-subtitle h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  text-transform: none;
+}
+.hero-author {
+  margin-top: 4%;
+}
+.hero-author h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+  text-transform:none;
 }
 
 @media (min-width: 1000px) {
@@ -253,7 +270,7 @@ p {
     height:100vh;
     width:100%;
   }
-  .hero-post-title {
+  .post-hero {
     position:absolute;
     width:100%;
     bottom: 0;
@@ -262,16 +279,7 @@ p {
   }
 }
 
-.post-top h1,
-.post-top h2,
-.post-top h3,
-.post-top h4,
-.post-top h5,
-.post-top p {
-  padding:0;
-  margin:0;
-}
-@media (max-width: 1000px) {
+@media (max-width: 999px) {
   .post-top h1,
   .post-top h2,
   .post-top h3,
